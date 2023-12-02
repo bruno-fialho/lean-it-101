@@ -12,3 +12,6 @@
 - Queria utilizar o Swagger, mas não consegui fazer ele rodar com Fastify e TypeScript, precisaria de mais tempo para achar uma solução
 
 ## Screenshots
+
+![Screenshot from 2023-12-01 22-41-10](https://github.com/bruno-fialho/lean-it-101/assets/45835631/0b7e1369-c757-487c-b6c2-a2f3dfaf9540)
+![Screenshot from 2023-12-01 22-41-18](https://github.com/bruno-fialho/lean-it-101/assets/45835631/8af786dd-21b4-4f5e-8a0e-9cf6a66e0964)
