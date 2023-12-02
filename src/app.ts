@@ -1,13 +1,12 @@
 import fastify from 'fastify'
 import { ZodError } from 'zod'
 
-import { env } from './env'
+import { env } from './infra/env'
+import { sorting } from './infra/http/controllers/sorting-controller'
 
 export const app = fastify()
 
-app.get('/', async () => {
-  return { message: 'Hello world!' }
-})
+app.post('/sorting', sorting)
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {

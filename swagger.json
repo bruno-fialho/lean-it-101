@@ -1,0 +1,105 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Sorting API",
+    "version": "1.0.0",
+    "description": "API for sorting books"
+  },
+  "host": "localhost:3333",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Points",
+      "description": "Endpoints"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {},
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/sorting": {
+      "post": {
+        "summary": "Sort books",
+        "description": "Sort books based on the provided criteria",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "title": { "type": "string" },
+                    "author": { "type": "string" },
+                    "editionYear": { "type": "number" }
+                  },
+                  "required": ["id", "title", "author", "editionYear"]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Books sorted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "title": { "type": "string" },
+                      "author": { "type": "string" },
+                      "editionYear": { "type": "number" }
+                    },
+                    "required": ["id", "title", "author", "editionYear"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BooksItems": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/BooksObj"
+      }
+    },
+    "BooksObj": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "Book 1"
+        },
+        "title": {
+          "type": "string",
+          "example": "Title"
+        },
+        "author": {
+          "type": "string",
+          "example": "John Doe"
+        },
+        "editionYear": {
+          "type": "string",
+          "example": 2010
+        }
+      }
+    }
+  }
+}
